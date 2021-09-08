@@ -425,6 +425,15 @@ class Container(V1Container):
 
         return self.add_resource_limit(vendor, gpu)
 
+    def set_image(self, image) -> 'Container':
+        """Set image for the container.
+    
+        Args:
+          image: Container image ID.
+        """
+        self.image = image
+        return self
+
     def add_volume_mount(self, volume_mount) -> 'Container':
         """Add volume to the container.
 
